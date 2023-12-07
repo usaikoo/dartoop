@@ -1,38 +1,38 @@
-class Hero {
-  // Private properties တွေတည်ဆောက်ထားတာပါ
-  int? _id;
-  final String? _name = "ကျန်စစ်သား";
+class BankAccount {
+  // Private property
+  double _balance;
 
-// Getter method ကိုတည်ဆောက်ပြီး  private property _id ကို access ယူဖို့ပါ။
-  int getId() {
-    return _id!;
-  }
+  // Constructor
+  BankAccount(this._balance);
 
-// Getter method ကိုတည်ဆောက်ပြီး  private property _name ကို access ယူဖို့ပါ။
-  String getName() {
-    return _name!;
-  }
+  // Getter for the private property (balance)
+  double get balance => _balance;
 
-// Setter method တည်ဆောက်ပြီး private property _id ၏တန်ဖိုး ကို ပြုပြင်ဖို့ပါ။
-  void setId(int id) {
-    this._id = id;
-  }
-
-// Setter method တည်ဆောက်ပြီး private property _name ၏တန်ဖိုး ကို ပြုပြင်ဖို့ပါ။
-  void setName(String name) {
-    // this._name = name;
+  // Setter for the private property (balance)
+  set balance(double newBalance) {
+    if (newBalance >= 0) {
+      _balance = newBalance;
+      print("Balance updated successfully!");
+    } else {
+      print("Invalid balance. Please provide a non-negative balance.");
+    }
   }
 }
 
 void main() {
-  // Hero class ၏ Object တစ်ခုကို ဖန်တီးမယ်
-  Hero hero = new Hero();
-  //public setter ကိုသုံးပြီး private properties တွေ၏ တန်ဖိုးကို ပြောင်းမယ်။
-  // hero.setId(1);
-  // hero.setName("ကျန်စစ်သား");
-  hero._name = "ငလုံးလဖယ်"; // It is working, but why?
+  // Creating an instance of the BankAccount class
+  var account = BankAccount(1000.0);
 
-  // getter ကို သုံးပြီး object ၏ တန်ဖိုး တွေကို ပြန်ထုတ်ကြည့်မယ်။
-  print("Id: ${hero.getId()}");
-  print("Name: ${hero.getName()}");
+  // Accessing the balance using the getter
+  print("Current balance: \$${account.balance}");
+
+  // Using the setter to update the balance
+  account.balance = 1200.0;
+  print("Updated balance: \$${account.balance}");
+
+  // Trying to set an invalid negative balance
+  account.balance = -500.0; // This will print an error message
+
+  // Accessing the balance after attempting to set an invalid balance
+  print("Balance after invalid update: \$${account.balance}");
 }

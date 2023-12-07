@@ -526,5 +526,106 @@ final keyword ကို သုံးပြီး properties တွေရဲ့ �
 > - Testability: class အတွင်းမှာ ရှိတဲ့ properties တွေ methods တွေကို အလွယ်တကူ test လုပ်နိုင်ခြင်း။
 > - Modularity and Code Organization: ကုဒ်တွေကို class အစုအဝေးအတွင်းမှာ ထည့်သွင်းထားနိုင်တယ်။ အဲ့လိုထည့်သွင်းပြီး ထားနိုင်ခြင်းကြောင့် ပရိုဂမ်ကို အလွယ်တကူနားလည်စေနိုင်ပြီး maintain လုပ်ရလွယ်ခြင်း နှင့် update လုပ်ရလွယ်ခြင်း
 > - Security: ဒေတာတွေကို unauthorized modification သို့ access လုပ်ခြင်းကနေ ကာကွယ်နိုင်ခြင်း။
+
+#### Getter And Setter
+
+1. Getter ဆိုတာ ဘာလဲ?
+   class အတွင်းမှ property တွေ၏ တန်ဖိုးကို ယူဖို့ အတွက် getter တွေသုံးတာပါ။ တနည်းအားဖြင့် object တစ်ခုဖန်တီးတဲ့အခါ class အတွင်းမှာရှိတဲ့ properties တွေရဲ့ တန်ဖိုးကို ယူဖို့ getter တွေကို သုံးပါတယ်။
+
+ဥပမာ
+
+```dart
+class Person {
+  // Properties
+  String? firstName;
+  String? lastName;
+
+  // Parameterized constructor ကနေ firstName နဲ့ lastName တန်ဖိုးများအား သတ်မှတ်လိုက်ပါတယ်။
+  Person(this.firstName, this.lastName);
+
+  // Getter က ဒီနေရာမှာ properties တန်ဖိုးတွေကို runturn ပြန်ပေးလိုက်ပါတယ်။
+  String get fullName => "$firstName $lastName";
+}
+
+void main() {
+  Person p = Person("John", "Doe");
+  // ဒီနေရာမှာ object p ကို ဖန်တီးပြီးနောက် p.fullName ဆိုတဲ့ get (getter) ကို လမ်းခေါ်ပြီး properties တွေရဲ့တန်ဖိုးကို ထုတ်ကြည့်သွားတာကို တွေ့ရမှာပါ
+  print(p.fullName);
+}
+```
+
+> #### မှတ်သားရန် :
 >
-> ##
+> getter ကို ရေးတဲ့ပုံစံ နှစ်မျိုးရေးနိုင်ပါတယ်။ အပေါ်က ဥပမာက ဒီ => (fat arrow) ကိုသုံးပြီး ရေးသားထားတာပါ။
+
+```dart
+  String get fullName => "$firstName $lastName";
+```
+
+> နောက် တစ်နည်းက { } ယခုလိုရေးသားနိုင်ပါတယ်။ 
+
+```dart
+ String get fullName {
+    return "$firstName $lastName";
+  }
+```
+
+2. Setter ဆိုတာ ဘာလဲ?
+Setter ဆိုတာက proterty တွေရဲ့ တန်ဖိုးကို သတ်မှတ် သို့ ပြုပြင် လိုက်တာပါ။ တနည်းအားဖြင့် object တစ်ခုဖန်တီးတဲ့အခါ class အတွင်းမှာ ရှိတဲ့ properties တွေရဲ့ တန်ဖိုးကို ပြုပြင်ဖို့အတွက် write လုပ်လိုက်ခြင်းဖြစ်ပါတယ်။ များသောအားဖြင့် private property တွေ၏ တန်ဖိုးကို ပြုပြင်ဖို့သုံးတာများပါတယ်။ 
+
+ဥပမာ
+
+```dart 
+class Person {
+  int _age;
+
+  Person(this._age);
+//getter 
+  int get age => _age;
+//setter ကို set ဆိုတာနဲ့ ဖန်တီးလိုက်ပါတယ်။ age ဆိုတဲ့ properties ကို ပြုပြင်ဖို့အတွက် set age ထဲမှာ newAge parameter တစ်ခုကို လက်ခံထားပါတယ်
+  set age(int newAge) {
+    // ရလာတဲ့ newAge ရဲ့တန်ဖိုးကို if condition နဲ့ စစ်ဆေးထားပါတယ်။
+    if (newAge >= 0 && newAge <= 120) {
+      //newAge က 0 နဲညီမယ် သူ့ထက်ကြီးမယ် ပြီးတော့ ၁၂၀ နဲ့ညီပြီး ၁၂၀ ထက်ငယ်မယ်ဆိုရင် private property _age တန်ဖိုးကို လာပြောင်းသွားပါမယ်။ 
+      _age = newAge;
+      print("Age updated successfully!");
+
+    } else {
+      //if condition နဲ့ မညီတဲ့အရာတွေကို ဒီမှာ လာပြီး အလုပ်လုပ်သွားမှာပါ။
+      print("Invalid age. Please provide a valid age between 0 and 120.");
+    }
+  }
+}
+
+void main() {
+  //person object တစ်ခု ဖန်တဲ့အခါ argument 25 ဆိုတဲ့ age ကိုထည့်ပေးလိုက်ပါတယ်။
+  var person = Person(25);
+  //လက်ရှိအသက် 25 ကို ထုတ်ပေးပါလိမ့်မယ်
+  print("Current age: ${person.age}");
+
+  //ဒီကုဒ်က setter age ကိုခေါ်ပြီး တန်ဖိုး 30 ထည့်ပြီး _age value ကို ပြင်လိုက်ပါတယ်။
+  person.age = 30;
+  print("Updated age: ${person.age}");
+
+  //ဒီမှာ လဲဘဲ setter age ကို တန်ဖိုး ၁၅၀ ထည့်ပြီး _age value ကို ပြင်ဖို့ကြိုးစားပေမဲ့ error message ဘဲရပါလိမ့်မယ်။
+  person.age = 150; // Error message will be printed
+  print("Age after invalid update: ${person.age}");
+
+}
+
+```
+
+အထက်ပါ ဥပမာ ကိုကြည့်ရင် setter တွေ dart မှာ ဘယ်လို အလုပ်လုပ်လဲ နာလည်ပြီလို့ယူစပါတယ်။ အကယ်လို့ နားမလည်ရင် နောက်တကြိမ် ကျနော်ပြထားတဲ့ code ကို သေချာ ပြန်ဖတ်ပြီး လိုက်ရေးပြီး result တွေထုတ်ကြည့်ပါ။ 
+
+#### INHERITANCE IN DART
+Inhertiance ဆိုတာ အလွယ်တကူပြောရရင် မိဘဆီကနေ သားသမီးက အမွေဆက်ခံတဲ့သဘော ကိုပြောတယ်လို့သေဘာထားကြည့်ပါ။ မိဘပိုင်တဲ့ကား သူ့သားသမီးတွေက ယူမောင်းလို့ရတယ်။  dart မှာဆိုရင်လဲ class နှစ်ခု ကြား သူတို့ပိုင်ဆိုင်တဲ့ properties တွေ methods တွေကို share သုံးခြင်းကို inherticance လို့ခေါ်ပါတယ်။  
+
+> #### မှတ်သားရန် :<br>
+> Inherticance ကို ဖန်တီးလိုက်တာနဲ့ မိဘ နှင့် သားသမီး ကြားက is-a relation တစ်ခုဖန်တီး လိုက်တယ်လို့မြင်ကြည့်ပါ။ ဥပမာ Student is a Person, Car is a Vehicle, Dog is a Animal, School is a building စသည့်တို့ဖြစ်ပါတယ်။ <br>
+> ###### Dart မှာက single inheritance ကိုဘဲလုပ်ဆောင်နိုင်ပါတယ်။ ဆိုလိုတာက class တစ်ခုက နောက်ထပ် class တစ်ခုဆီကဘဲ inheritance လုပ်ယူလို့ရမှာပါ။ multiple inheritance လုပ်လို့မရပါဘူး။ class တစ်ခုက classes အများကြီးဆီကနေ inheritance ယူခွင့်မရှိပါ။ အဖေက တစ်ယောက်ထဲဘဲရှိတာကိုး အဖေနှစ်ယောက်သုံးယောက်ဆီကနေ အမွေဆက်ခံလို့မရနိုင်သလိုပေါ့ :D...
+
+> ###
+
+
+
+
