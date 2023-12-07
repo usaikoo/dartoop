@@ -1,38 +1,50 @@
-class BankAccount {
-  // Private property
-  double _balance;
+class Character {
+  String name;
+  int health;
 
-  // Constructor
-  BankAccount(this._balance);
+  Character(this.name, this.health);
 
-  // Getter for the private property (balance)
-  double get balance => _balance;
+  void takeDamage(int damage) {
+    health -= damage;
+    print('$name took $damage damage. Remaining health: $health');
+  }
 
-  // Setter for the private property (balance)
-  set balance(double newBalance) {
-    if (newBalance >= 0) {
-      _balance = newBalance;
-      print("Balance updated successfully!");
-    } else {
-      print("Invalid balance. Please provide a non-negative balance.");
-    }
+  void attack(Character target, int damage) {
+    print('$name performs an attack on ${target.name}.');
+    target.takeDamage(damage);
+  }
+
+  void showInfo() {
+    print('$name - Health: $health');
+  }
+}
+
+class Hero extends Character {
+  String superpower;
+
+  Hero(String name, this.superpower) : super(name, 150);
+
+  void useSuperpower() {
+    print('$name uses superpower: $superpower');
+  }
+
+  @override
+  void attack(Character target, int damage) {
+    print('$name performs a heroic attack on ${target.name}.');
+    target.takeDamage(damage);
   }
 }
 
 void main() {
-  // Creating an instance of the BankAccount class
-  var account = BankAccount(1000.0);
+  var enemy = Character('Evil Enemy', 100);
+  var hero = Hero('Superhero', 'Flight');
 
-  // Accessing the balance using the getter
-  print("Current balance: \$${account.balance}");
+  enemy.showInfo();
+  hero.showInfo();
 
-  // Using the setter to update the balance
-  account.balance = 1200.0;
-  print("Updated balance: \$${account.balance}");
+  hero.attack(enemy, 20);
+  hero.useSuperpower();
 
-  // Trying to set an invalid negative balance
-  account.balance = -500.0; // This will print an error message
-
-  // Accessing the balance after attempting to set an invalid balance
-  print("Balance after invalid update: \$${account.balance}");
+  enemy.showInfo();
+  hero.showInfo();
 }

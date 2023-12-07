@@ -9,7 +9,6 @@
 - [Encapsulation In Dart](#encapsulation-in-dart)
 - [Getter And Setter](#getter-and-setter)
 - [Inheritance In Dart](#inheritance-in-dart)
-- [Super In Dart](#super-in-dart)
 - [Polymorphism In Dart](#polymorphism-in-dart)
 - [Static In Dart](#static-in-dart)
 - [Enum In Dart](#enum-in-dart)
@@ -617,8 +616,10 @@ void main() {
 
 အထက်ပါ ဥပမာ ကိုကြည့်ရင် setter တွေ dart မှာ ဘယ်လို အလုပ်လုပ်လဲ နာလည်ပြီလို့ယူစပါတယ်။ အကယ်လို့ နားမလည်ရင် နောက်တကြိမ် ကျနော်ပြထားတဲ့ code ကို သေချာ ပြန်ဖတ်ပြီး လိုက်ရေးပြီး result တွေထုတ်ကြည့်ပါ။ 
 
+
+
 #### INHERITANCE IN DART
-Inhertiance ဆိုတာ အလွယ်တကူပြောရရင် မိဘဆီကနေ သားသမီးက အမွေဆက်ခံတဲ့သဘော ကိုပြောတယ်လို့သေဘာထားကြည့်ပါ။ မိဘပိုင်တဲ့ကား သူ့သားသမီးတွေက ယူမောင်းလို့ရတယ်။  dart မှာဆိုရင်လဲ class နှစ်ခု ကြား သူတို့ပိုင်ဆိုင်တဲ့ properties တွေ methods တွေကို share သုံးခြင်းကို inherticance လို့ခေါ်ပါတယ်။  
+Inhertiance ဆိုတာ အလွယ်တကူပြောရရင် မိဘဆီကနေ သားသမီးက အမွေဆက်ခံတဲ့သဘော ကိုပြောတယ်လို့သေဘာထားကြည့်ပါ။ မိဘပိုင်တဲ့ကား သူ့သားသမီးတွေက ယူမောင်းလို့ရတယ်။  dart မှာဆိုရင်လဲ class နှစ်ခု ကြား သူတို့ပိုင်ဆိုင်တဲ့ properties တွေ methods တွေကို share သုံးခြင်းကို inherticance လို့ခေါ်ပါတယ်။ <b>extend</b> keyword ကို သုံပြီး Parent class က နေ Inheritance ကို လုပ်ဆောင်ရပါတယ်။
 
 > #### မှတ်သားရန် :<br>
 > Inherticance ကို ဖန်တီးလိုက်တာနဲ့ မိဘ နှင့် သားသမီး ကြားက is-a relation တစ်ခုဖန်တီး လိုက်တယ်လို့မြင်ကြည့်ပါ။ ဥပမာ Student is a Person, Car is a Vehicle, Dog is a Animal, School is a building စသည့်တို့ဖြစ်ပါတယ်။ <br>
@@ -626,6 +627,241 @@ Inhertiance ဆိုတာ အလွယ်တကူပြောရရင် မ
 
 > ###
 
+##### Syntax
+
+```dart
+// သူ့အတွင်းမှာ ရှိတဲ့ properties တွေ methods တွေကို လာပြီး ယူသုံးမှာဖြစ်တဲ့အတွက် သူ့ကို Base class သို့ super class ကို ခေါ်ပါတယ်။
+class ParentClass {
+
+  // Parent class code
+}
+
+//Base class ကနေ properties တွေ methods တွေကို ခေါ်ယူသုံးမှာမို့ သူကို derived class သို့ sub class လို့ခေါ်ပါတယ်။
+class ChildClass extends ParentClass {
+  // Child class code
+}
+
+```
+ဥပမာ 
+Character ဆိုတဲ့ class တစ်ခု ကိုဖန်တီးပါမယ်။ နောက် ကျနော်တို့ hero class တစ်ခုဆောက်ပြီး Character ထဲက properties တွေနဲ့ methods တွေကို အမွေဆက်ခံကြည့်ပါမယ်။ 
+
+```dart
+class Character {
+  // Properties
+  String? name;
+  int? age;
+
+  // Method
+  void display() {
+    print("Name: $name");
+    print("Age: $age");
+  }
+}
+//hero class တစ်ခုဆောက်ပြီး Character ထဲက properties တွေနဲ့ methods တွေကို extends နဲ့ အမွေဆက်ခံထားပါတယ်
+
+class Hero extends Character {
+  // Fields
+  String? wapon;
+
+  // Method
+  void displaySchoolInfo() {
+    print("$name မှာ: $wapon ရှိသည်");
+  }
+}
+
+void main() {
+  // Creating an object of the Hero class
+  var hero = Hero();
+  hero.name = "ကျန်စစ်သား";
+  hero.age = 45;
+  hero.wapon = "လှံ";
+  hero.display();
+  hero.displaySchoolInfo();
+}
+
+
+```
+> Inheritance ၏ ကောင်းကျိုးများ <br>
+- ကုဒ်တွေကို ပြန်သုံးနိုင်တာကြောင့် ကုဒ်အရေအတွက်ကို လျှော့ချနိုင်ခြင်း
+
+- ပရိုဂရမ် ဒဇိုင်းကို ပိုမိုကောင်းမွန်နဲ့ ပုစံဖြစ်အောင် ကူညီပေးနိုင်ခြင်း
+- ကုဒ်ရိုးရှင်းမှု၊ သန့်ရှင်းမှု၊ ကုဒ်ထိမ်းသိန်းဖို့  အချိန် နှင့် ငွေ ကုန်ကျသက်သာမှု 
+
+- sub classes တွေအတွက် standard interface တစ်ခု ထားနိုင်ခြင်းနှင့် libraries classes တွေတည်ဆောက်ဖို့ ကူညီနိုင်ခြင်း
+
+> Inheritance အမျိုးအစားများ <br>
+- Single Inheritance : base class ကနေ sub class က inhertiance လုပ်ခြင်းကိုဆိုလိုသည်။
+
+- Multilevel Inheritance : base class ကနေ sub class အဲ့ sub class ကို နောက် ထပ် sub calss က ထပ်မံ inheritance လုပ်ခြင်းကို ဆိုလိုသည်။
+- Hierarchical Inheritance : base class ကို မတူညီတဲ့ sub classes တွေက inheritance လုပ်ခြင်းကို ဆိုလိုသည်။ 
+- Multiple Inheritance : Dart မှာ မရှိပါ။
+
+Multilevel Inheritance ဥပမာ တစ်ခု လုပ်ကြည့်ပါမယ်။ 
+
+```dart 
+
+class Vehical {
+String? name;
+double? prize;
+}
+
+class Tesla extends Vehical {
+void display() {
+  print("Name: ${name}");
+  print("Prize: ${prize}");
+}
+}
+
+class Model3 extends Tesla {
+String? color;
+
+void display() {
+    // ဒီနေရာမှာ suber ကိုသုံးထားတာ သတိချပ်စေချင်ပါတယ်။ Base class Vehical ကနေ display method ကို ယူသုံးသွားတာပါ
+  super.display();
+  print("Color: ${color}");
+}
+}
+
+void main() {
+Model3 m = new Model3();
+m.name = "Tesla Model 3";
+m.prize = 50000.00;
+m.color = "Red";
+m.display();
+}
+```
 
 
 
+Hierarchical Inheritance ဥပမာ တစ်ခု လုပ်ကြည့်ပါမယ်။ အထပ်မှာ ပြခဲ့တဲ့ Character ကိုဘဲ နောက်ထပ် Hero တစ်ယောက်ထပ်ဆောက်လိုက်ပါ။
+
+```dart
+class Character {
+  // Properties
+  String? name;
+  int? age;
+
+  // Method
+  void display() {
+    print("Name: $name");
+    print("Age: $age");
+  }
+}
+// Here In hero class, we are extending the
+// properties and methods of the Character class
+class Hero extends Character {
+  // Fields
+  String? wapon;
+
+  // Method
+  void displaySchoolInfo() {
+    print("$name မှာ: $wapon ရှိသည်");
+  }
+}
+class Hero2 extends Character {
+  // Fields
+  String? wapon;
+
+  // Method
+  void displaySchoolInfo() {
+    print("$name မှာ: $wapon ရှိသည်");
+  }
+}
+
+void main() {
+  // Creating an object of the Hero class
+  var hero = Hero();
+  hero.name = "ကျန်စစ်သား";
+  hero.age = 45;
+  hero.wapon = "လှံ";
+  hero.display();
+  hero.displaySchoolInfo();
+
+   // Creating an object of the Hero class
+  var hero2 = Hero2();
+  hero2.name = "အနော်ရထာ";
+  hero2.age = 50;
+  hero2.wapon = "မြား";
+  hero2.display();
+  hero2.displaySchoolInfo();
+}
+
+
+```
+
+
+> ### မှတ်သားရန်
+> - ကုဒ်တွေကို ပြန်လည်အသုံးပြုရန်ဖြစ်ပါတယ်။
+> - extends keyword ကို သုံးပြီး ဖန်တီးရပါတယ်။
+> - Super class ၏ Properties နှင့် methods ကို sub class ကပြန်ယူသုံးခြင်းဖြစ်တယ်။
+> - Sub class ထဲမှာ ၄င်း၏ Properties နှင့် methods တွေ တည်ဆောက်နိုင်ပါတယ်။
+
+####  Dart မှာ ဘာလို့ Multiple Inheritance ကို ခွင့်မပြုတာလဲ?
+ဘာလို့လဲဆိုရင် ambiguity (ကုဒ် ရူတ်ထွေးမှု) ကို ဖြစ်စေလိုပါ။ ဥပမာ Apple ဆိုတဲ့ sub class က Base class Fruit နဲ့ Vegetable နှစ်ခုကနေ extend နဲ့ အမွေဆက်ခံထားတဆိုပါဆို့။ အဲ့ဒီ့ Base Classes နှစ်ခုမှာ eat ဆိုတဲ့ နာမည်တူ Method နှစ်ခုရှိနေနိုင်ပါတယ်။  အဲ့လိုဆိုရင် eat ဆိုတဲ့ method ကို Apple က သွားခေါ်တဲ့အခါ ဘယ် Fruit နှင့် Vegetable Base class ၏ eat method နှစ်ခုထဲက ဘယ် Method ကို ခေါ်မှာလဲဆိုတာ ?။ အဲ့လို ရူပ်ထွေးမှုကြောင့် Dart က Support မပေးတာဖြစ်ပါတယ်။
+
+
+#### INHERITANCE OF CONSTRUCTOR IN DART
+
+ကျနော်တို့ အပေါ်မှာ လေ့လာခဲ့တဲ့ Constructor နဲ့ Inhertiance ကို ပေါင်းပြီး သုံးစွဲခြင်းပါ။ ဒါကြောင့် Constructor နဲ့ Inhertiance ကို နားလည်မှ ဒီကိစ္စကို ဆက်လက်လေ့လာပါ။
+
+Constructor Inheritance ဆိုတာဘာလဲ ?
+
+Base Class (Parent Class ) ထဲက Constructor ကို sub class ကနေ အမွေဆက်ခံ သို့ ခေါ်ယူသုံးစွဲတာကို ဆိုလိုတာပါ။
+
+ဥပမာ အပါ်မှာ လေ့လာခဲ့ တဲ့ constructor လေးမျိုးထဲက Parameterize constructor နဲ့ Inheritance ပေါင်းစပ်ရေးကြည့်ပါမယ်။
+
+```dart
+class Character {
+  String name;
+  int health;
+
+  Character(this.name, this.health);
+
+  void takeDamage(int damage) {
+    health -= damage;
+    print('$name took $damage damage. Remaining health: $health');
+  }
+
+  void attack(Character target, int damage) {
+    print('$name performs an attack on ${target.name}.');
+    target.takeDamage(damage);
+  }
+
+  void showInfo() {
+    print('$name - Health: $health');
+  }
+}
+
+class Hero extends Character {
+  String superpower;
+
+//ဒီနေရာမှာ Hero Constructor က : super(name,150)  ဆိုပြီး Base Class Character ထဲက constructor ကို Inheritance လုပ်သွားခြင်းဖြစ်ပါတယ်။
+  Hero(String name, this.superpower) : super(name, 150);
+
+  void useSuperpower() {
+    print('$name uses superpower: $superpower');
+  }
+
+  @override
+  void attack(Character target, int damage) {
+    print('$name performs a heroic attack on ${target.name}.');
+    target.takeDamage(damage);
+  }
+}
+
+void main() {
+  var enemy = Character('Evil Enemy', 100);
+  var hero = Hero('Superhero', 'Flight');
+
+  enemy.showInfo();
+  hero.showInfo();
+
+  hero.attack(enemy, 20);
+  hero.useSuperpower();
+
+  enemy.showInfo();
+  hero.showInfo();
+}
+
+
+```
