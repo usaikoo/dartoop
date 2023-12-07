@@ -404,9 +404,125 @@ Note: Here p1 and p2 has the same hash code. This is because p1 and p2 are const
 >#
 
 ### Encapsulation
-အရိုးရှင်းဆုံးနည်းလမ်းနဲ့ ပြောရရင် Encapsulation ဆိုတာ library အတွင်းမှာ ဒေတာကို ဖုံးကွယ်ထားခြင်းကို  ဆိုလိုတာပါ။ 
+အရိုးရှင်းဆုံးနည်းလမ်းနဲ့ ပြောရရင် Encapsulation ဆိုတာ library(ဆိုတာကျနော်ထပ်ရှင်းပြပါမယ်) အတွင်းက ဒေတာကို ပြင်ပ နေရာကနေ လှမ်းယူခေါ်သုံးခွင့်မရှိအောင် ဖုံးကွယ်ထားခြင်းကို  ဆိုလိုတာပါ။ အဲ့လိုနည်းစနစ်ကိုအသုံးပြုပြီးရေးသားခြင်းက မိမိရေးတဲ့ ပရိုဂမ်ကို အရမ်းရူပ်ထွေးမှုမဖြစ်စေဘဲရိုးရှင်းပြီး ကုဒ်စီမံထိမ်းချုပ်ရ လွယ်ကူစေချင်းဖြစ်ပါတယ်။
 
-In Dart, Encapsulation means hiding data within a library, preventing it from outside factors. It helps you control your program and prevent it from becoming too complicated.
+- Library ဆိုတာဘာလဲ ?
+
+ပုံမှန်အားဖြင့် .dart နဲ့ file ကို library လိုသုံးနူန်းလိုက်ခြင်းဖြစ်ပါတယ်။ library ဆိုတာက functions တွေ နှင့် classess တွေ ပါဝင်ဖွဲ့စည်းထားတဲ့ .dart file တစ်ဖိုင်ကို ရည်ရွယ်ပါတယ်။ import keyword ကို အသုံးပြုပြီး library တစ်ခုနဲ့ တစ်ခု ချိတ်ဆက်အလုပ်လုပ်နိုင်ပါတယ်။ အဲ့လို ချိတ်ဆက်အလုပ်လုပ်ရင်း library တစ်ခု၏ အတွင်းမှ နောက် library တစ်ခုက လာခေါ်ယူသုံးစွဲခွင့်မရှိအောင် data တွေကို ဖုံးကွယ်ထား ခြင်းကို encapsulation လိုခေါ်ခြင်းဖြစ်ပါတယ်။
+
+
+#### encapsulation လုပ်ဆောင်နိုင်ရန် 
+1. calss အတွင်းမှ properties တွေကို private (_) underscore ကိုအသုံးပြုပြီး ကြောငြာပေးရမှာ ဖြစ်ပါတယ်။ 
+2. အထပ်ပါ private အနေနဲ့ ဖန်တီးလိုက်တဲ့ properties တွေ၏ တန်ဖိုးကို ပြုပြင်ဖို့ သို့ ခေါ်ယူဖို့ ဆိုရင် public getter နဲ့ setter methods တွေတည်ဆောက်ပြီး ခေါ်ယူပြုပြင်ရပါမယ်။
+
+> #### မှတ်သားရန်
+> Dart မှာ php လိုကျနော်တို့ရေး နေကျ Access Modifiers ဖြစ်တဲ့ public, private နဲ့ protected တို့ဆိုတာမရှိပါဘူး။ Dart မှာ က _ (undersore) ကိုသုံးပြီး private property သို့ method တွေကို ရေးသားရတာပါ။ Encapsulation ဆိုတာနဲ့ class level မှာ မဟုတ်ဘဲ library level မှာဖြစ်တာဆိုတာသတိချပ်စေချင်ပါတယ်။ 
+
+#### ဥပမာ : Encapsulation 
+Hero ဆိုတဲ့ class တစ်ခုကို ဖန်တီးလိုက်မယ်။ အဲ့ class မှာ privagte properties _id နဲ့ _name နှစ်ခု ရှိပါမယ်။  ကျနော်တို့ နောက် ထပ် public methods setId() နဲ့ setName() ဆိုပြီး private properties ကို ပြုပြင်ဖို့ ထပ်ပြီးတည်ဆောက်ကြည့်ပါမယ်။ ဒီနေရာမှာ getter တွေ setter တွေသုံးသွားတာ ကို အောက်မှာ getter တွေ setter တွေထပ်မံရှင်းလင်းသွားပါမယ်။ 
+
+```dart
+class Hero {
+  // Private properties တွေတည်ဆောက်ထားတာပါ
+  int? _id;
+  String? _name;
+
+// Getter method ကိုတည်ဆောက်ပြီး  private property _id ကို access ယူဖို့ပါ။
+  int getId() {
+    return _id!;
+  }
+// Getter method ကိုတည်ဆောက်ပြီး  private property _name ကို access ယူဖို့ပါ။
+  String getName() {
+    return _name!;
+  }
+// Setter method တည်ဆောက်ပြီး private property _id ၏တန်ဖိုး ကို ပြုပြင်ဖို့ပါ။
+  void setId(int id) {
+    this._id = id;
+  }
+// Setter method တည်ဆောက်ပြီး private property _name ၏တန်ဖိုး ကို ပြုပြင်ဖို့ပါ။
+  void setName(String name) {
+    this._name = name;
+  }
+  
+}
+
+void main() {
+  // Hero class ၏ Object တစ်ခုကို ဖန်တီးမယ်
+  Hero hero = new Hero();
+  //public setter ကိုသုံးပြီး private properties တွေ၏ တန်ဖိုးကို ပြောင်းမယ်။
+  hero.setId(1);
+  hero.setName("ကျန်စစ်သား");
+
+  // getter ကို သုံးပြီး object ၏ တန်ဖိုး တွေကို ပြန်ထုတ်ကြည့်မယ်။
+  print("Id: ${hero.getId()}");
+  print("Name: ${hero.getName()}");
+}
+```
+
+
+အထပ်မှာပြတဲ့ example ကိုဘဲ private properties တွေရဲ့ တန်ဖိုးကို နောက်တနည်းနဲ့ တိုက်ရိုက် သွားထိကြည့်ပါမယ်။
+
+```dart 
+class Hero {
+//  အထပ်ပါကုဒ်များဒီမှာ အရင်တိုင်းရှိတယ်သဘောထားပါ
+  ....
+}
+void main() {
+  // Hero class ၏ Object တစ်ခုကို ဖန်တီးမယ်
+  Hero hero = new Hero();
+  //public setter ကိုသုံးပြီး private properties တွေ၏ တန်ဖိုးကို ပြောင်းမယ်။
+  hero.setId(1);
+  hero.setName("ကျန်စစ်သား");
+
+  //ဒီနေရာမှာ _name ကို တိုက်ရိုက်သွားခေါ်ပြီး တန်ဖိုးချိန်းလိုက်တာပါ။ အဲ့ဒါဆိုလဲ အလုပ်လုပ်နေမှာ ဘာလို့ private ဆိုပြီး private မဖြစ်တာလဲ?
+  hero._name = "ငလုံးလဖယ်"; 
+
+  // getter ကို သုံးပြီး object ၏ တန်ဖိုး တွေကို ပြန်ထုတ်ကြည့်မယ်။
+  print("Id: ${hero.getId()}");
+  print("Name: ${hero.getName()}");
+}
+
+```
+
+အပေါ်မှာ ပြောခဲ့သလိုဘဲ သူက class level မဟုတ်ပါ library level ဖြစ်လို့ပါ။ အကယ်လို void main() function ကို နောက် .dart file နဲ့ library တစ်ခုသီးသန့်ဆောက်ပြီးယခုလိုခေါ်ကြည်တဲ့အခါ error တတ်ပါလိမ့်မယ်။ 
+
+
+main.dart file ကနေ hero.dart file ဆိုပြီး library နှစ်ခု ခွဲ့ပြီး ဒီနည်းအတိုင်းရေးကြည့်တဲ့အခါ ယခုလို error ကို တွေ့ရမှာဖြစ်ပါတယ်။
+
+``` The setter '_name' isn't defined for the type 'Hero'.
+Try importing the library that defines '_name', correcting the name to the name of an existing setter, or defining a setter or field named '_name'.dartundefined_setter
+```
+
+#### Read-only Properties ဆိုပြီး သတ်မှတ်လို့ရပါသေးတယ်။ ဥပမာ
+
+```dart 
+class Hero {
+  int? _id;
+ final String _name = "ကျန်စစ်သား";
+//  အထပ်ပါကုဒ်များဒီမှာ အရင်တိုင်းရှိတယ်သဘောထားပါ
+  ....
+}
+void main() {
+  ...
+  // ဒါဆိုရင်တော့ error တတ်ပါပြီ
+  hero._name = "ငလုံးလဖယ်"; 
+  ....
+}
+
+```
+final keyword ကို သုံးပြီး properties တွေရဲ့ တန်ဖိုးကို read only ပုံစံ နဲ့ dart မှာ အသုံးပြုနိုင်ပါတယ်။ ဒီလို final နဲ့ property တန်ဖိုးကို သတ်မှတ်ပြီးပြီဆိုရင် library အတွင်းကနေ တန်ဖိုးကို ချိန်းပိုင်ခွင့်လဲ မရှိတော့ပါဘူး။
+>##
+> Encapsulation ကဘာကြောင့် အရေးကြီးသလဲ?
+>##
+> - Data ဖုံးကွယ်ခြင်း: class ပြင်ပနေရာကနေ ဒေတာတွေကို access ပမေးချင်တဲ့အခါ Encapsulation  အသုံးပြုပြီး data hiding လုပ်နိုင်ခြင်း။
+> - Testability: class အတွင်းမှာ ရှိတဲ့ properties တွေ methods တွေကို အလွယ်တကူ test လုပ်နိုင်ခြင်း။
+> - Modularity and Code Organization: ကုဒ်တွေကို class အစုအဝေးအတွင်းမှာ ထည့်သွင်းထားနိုင်တယ်။ အဲ့လိုထည့်သွင်းပြီး ထားနိုင်ခြင်းကြောင့် ပရိုဂမ်ကို အလွယ်တကူနားလည်စေနိုင်ပြီး maintain လုပ်ရလွယ်ခြင်း နှင့် update လုပ်ရလွယ်ခြင်း
+> - Security: ဒေတာတွေကို unauthorized modification သို့ access လုပ်ခြင်းကနေ ကာကွယ်နိုင်ခြင်း။
+> ##
+
+
+
+
 
 
 
