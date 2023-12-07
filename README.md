@@ -1,4 +1,4 @@
-[Home](#home) | [github](https://github.com/usaikoo/dartoop.git) | [Profile](#https://www.usaiko.dev/)
+[Home](#home) | [github](https://github.com/usaikoo/dartoop.git) | [Profile](https://www.usaiko.dev/)
 
 # Dart object oriented programming in Myanmar
 
