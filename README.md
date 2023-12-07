@@ -1,3 +1,5 @@
+[Home](#home) | [github](https://github.com/usaikoo/dartoop.git) | [Profile](#https://www.usaiko.dev/)
+
 # Dart object oriented programming in Myanmar
 
 ## မာတိကာ
@@ -561,7 +563,7 @@ void main() {
   String get fullName => "$firstName $lastName";
 ```
 
-> နောက် တစ်နည်းက { } ယခုလိုရေးသားနိုင်ပါတယ်။ 
+> နောက် တစ်နည်းက { } ယခုလိုရေးသားနိုင်ပါတယ်။
 
 ```dart
  String get fullName {
@@ -570,22 +572,22 @@ void main() {
 ```
 
 2. Setter ဆိုတာ ဘာလဲ?
-Setter ဆိုတာက proterty တွေရဲ့ တန်ဖိုးကို သတ်မှတ် သို့ ပြုပြင် လိုက်တာပါ။ တနည်းအားဖြင့် object တစ်ခုဖန်တီးတဲ့အခါ class အတွင်းမှာ ရှိတဲ့ properties တွေရဲ့ တန်ဖိုးကို ပြုပြင်ဖို့အတွက် write လုပ်လိုက်ခြင်းဖြစ်ပါတယ်။ များသောအားဖြင့် private property တွေ၏ တန်ဖိုးကို ပြုပြင်ဖို့သုံးတာများပါတယ်။ 
+   Setter ဆိုတာက proterty တွေရဲ့ တန်ဖိုးကို သတ်မှတ် သို့ ပြုပြင် လိုက်တာပါ။ တနည်းအားဖြင့် object တစ်ခုဖန်တီးတဲ့အခါ class အတွင်းမှာ ရှိတဲ့ properties တွေရဲ့ တန်ဖိုးကို ပြုပြင်ဖို့အတွက် write လုပ်လိုက်ခြင်းဖြစ်ပါတယ်။ များသောအားဖြင့် private property တွေ၏ တန်ဖိုးကို ပြုပြင်ဖို့သုံးတာများပါတယ်။
 
 ဥပမာ
 
-```dart 
+```dart
 class Person {
   int _age;
 
   Person(this._age);
-//getter 
+//getter
   int get age => _age;
 //setter ကို set ဆိုတာနဲ့ ဖန်တီးလိုက်ပါတယ်။ age ဆိုတဲ့ properties ကို ပြုပြင်ဖို့အတွက် set age ထဲမှာ newAge parameter တစ်ခုကို လက်ခံထားပါတယ်
   set age(int newAge) {
     // ရလာတဲ့ newAge ရဲ့တန်ဖိုးကို if condition နဲ့ စစ်ဆေးထားပါတယ်။
     if (newAge >= 0 && newAge <= 120) {
-      //newAge က 0 နဲညီမယ် သူ့ထက်ကြီးမယ် ပြီးတော့ ၁၂၀ နဲ့ညီပြီး ၁၂၀ ထက်ငယ်မယ်ဆိုရင် private property _age တန်ဖိုးကို လာပြောင်းသွားပါမယ်။ 
+      //newAge က 0 နဲညီမယ် သူ့ထက်ကြီးမယ် ပြီးတော့ ၁၂၀ နဲ့ညီပြီး ၁၂၀ ထက်ငယ်မယ်ဆိုရင် private property _age တန်ဖိုးကို လာပြောင်းသွားပါမယ်။
       _age = newAge;
       print("Age updated successfully!");
 
@@ -614,15 +616,16 @@ void main() {
 
 ```
 
-အထက်ပါ ဥပမာ ကိုကြည့်ရင် setter တွေ dart မှာ ဘယ်လို အလုပ်လုပ်လဲ နာလည်ပြီလို့ယူစပါတယ်။ အကယ်လို့ နားမလည်ရင် နောက်တကြိမ် ကျနော်ပြထားတဲ့ code ကို သေချာ ပြန်ဖတ်ပြီး လိုက်ရေးပြီး result တွေထုတ်ကြည့်ပါ။ 
-
-
+အထက်ပါ ဥပမာ ကိုကြည့်ရင် setter တွေ dart မှာ ဘယ်လို အလုပ်လုပ်လဲ နာလည်ပြီလို့ယူစပါတယ်။ အကယ်လို့ နားမလည်ရင် နောက်တကြိမ် ကျနော်ပြထားတဲ့ code ကို သေချာ ပြန်ဖတ်ပြီး လိုက်ရေးပြီး result တွေထုတ်ကြည့်ပါ။
 
 #### INHERITANCE IN DART
-Inhertiance ဆိုတာ အလွယ်တကူပြောရရင် မိဘဆီကနေ သားသမီးက အမွေဆက်ခံတဲ့သဘော ကိုပြောတယ်လို့သေဘာထားကြည့်ပါ။ မိဘပိုင်တဲ့ကား သူ့သားသမီးတွေက ယူမောင်းလို့ရတယ်။  dart မှာဆိုရင်လဲ class နှစ်ခု ကြား သူတို့ပိုင်ဆိုင်တဲ့ properties တွေ methods တွေကို share သုံးခြင်းကို inherticance လို့ခေါ်ပါတယ်။ <b>extend</b> keyword ကို သုံပြီး Parent class က နေ Inheritance ကို လုပ်ဆောင်ရပါတယ်။
+
+Inhertiance ဆိုတာ အလွယ်တကူပြောရရင် မိဘဆီကနေ သားသမီးက အမွေဆက်ခံတဲ့သဘော ကိုပြောတယ်လို့သေဘာထားကြည့်ပါ။ မိဘပိုင်တဲ့ကား သူ့သားသမီးတွေက ယူမောင်းလို့ရတယ်။ dart မှာဆိုရင်လဲ class နှစ်ခု ကြား သူတို့ပိုင်ဆိုင်တဲ့ properties တွေ methods တွေကို share သုံးခြင်းကို inherticance လို့ခေါ်ပါတယ်။ <b>extend</b> keyword ကို သုံပြီး Parent class က နေ Inheritance ကို လုပ်ဆောင်ရပါတယ်။
 
 > #### မှတ်သားရန် :<br>
+>
 > Inherticance ကို ဖန်တီးလိုက်တာနဲ့ မိဘ နှင့် သားသမီး ကြားက is-a relation တစ်ခုဖန်တီး လိုက်တယ်လို့မြင်ကြည့်ပါ။ ဥပမာ Student is a Person, Car is a Vehicle, Dog is a Animal, School is a building စသည့်တို့ဖြစ်ပါတယ်။ <br>
+>
 > ###### Dart မှာက single inheritance ကိုဘဲလုပ်ဆောင်နိုင်ပါတယ်။ ဆိုလိုတာက class တစ်ခုက နောက်ထပ် class တစ်ခုဆီကဘဲ inheritance လုပ်ယူလို့ရမှာပါ။ multiple inheritance လုပ်လို့မရပါဘူး။ class တစ်ခုက classes အများကြီးဆီကနေ inheritance ယူခွင့်မရှိပါ။ အဖေက တစ်ယောက်ထဲဘဲရှိတာကိုး အဖေနှစ်ယောက်သုံးယောက်ဆီကနေ အမွေဆက်ခံလို့မရနိုင်သလိုပေါ့ :D...
 
 > ###
@@ -642,8 +645,9 @@ class ChildClass extends ParentClass {
 }
 
 ```
-ဥပမာ 
-Character ဆိုတဲ့ class တစ်ခု ကိုဖန်တီးပါမယ်။ နောက် ကျနော်တို့ hero class တစ်ခုဆောက်ပြီး Character ထဲက properties တွေနဲ့ methods တွေကို အမွေဆက်ခံကြည့်ပါမယ်။ 
+
+ဥပမာ
+Character ဆိုတဲ့ class တစ်ခု ကိုဖန်တီးပါမယ်။ နောက် ကျနော်တို့ hero class တစ်ခုဆောက်ပြီး Character ထဲက properties တွေနဲ့ methods တွေကို အမွေဆက်ခံကြည့်ပါမယ်။
 
 ```dart
 class Character {
@@ -681,24 +685,27 @@ void main() {
 
 
 ```
+
 > Inheritance ၏ ကောင်းကျိုးများ <br>
+
 - ကုဒ်တွေကို ပြန်သုံးနိုင်တာကြောင့် ကုဒ်အရေအတွက်ကို လျှော့ချနိုင်ခြင်း
 
 - ပရိုဂရမ် ဒဇိုင်းကို ပိုမိုကောင်းမွန်နဲ့ ပုစံဖြစ်အောင် ကူညီပေးနိုင်ခြင်း
-- ကုဒ်ရိုးရှင်းမှု၊ သန့်ရှင်းမှု၊ ကုဒ်ထိမ်းသိန်းဖို့  အချိန် နှင့် ငွေ ကုန်ကျသက်သာမှု 
+- ကုဒ်ရိုးရှင်းမှု၊ သန့်ရှင်းမှု၊ ကုဒ်ထိမ်းသိန်းဖို့ အချိန် နှင့် ငွေ ကုန်ကျသက်သာမှု
 
 - sub classes တွေအတွက် standard interface တစ်ခု ထားနိုင်ခြင်းနှင့် libraries classes တွေတည်ဆောက်ဖို့ ကူညီနိုင်ခြင်း
 
 > Inheritance အမျိုးအစားများ <br>
+
 - Single Inheritance : base class ကနေ sub class က inhertiance လုပ်ခြင်းကိုဆိုလိုသည်။
 
 - Multilevel Inheritance : base class ကနေ sub class အဲ့ sub class ကို နောက် ထပ် sub calss က ထပ်မံ inheritance လုပ်ခြင်းကို ဆိုလိုသည်။
-- Hierarchical Inheritance : base class ကို မတူညီတဲ့ sub classes တွေက inheritance လုပ်ခြင်းကို ဆိုလိုသည်။ 
+- Hierarchical Inheritance : base class ကို မတူညီတဲ့ sub classes တွေက inheritance လုပ်ခြင်းကို ဆိုလိုသည်။
 - Multiple Inheritance : Dart မှာ မရှိပါ။
 
-Multilevel Inheritance ဥပမာ တစ်ခု လုပ်ကြည့်ပါမယ်။ 
+Multilevel Inheritance ဥပမာ တစ်ခု လုပ်ကြည့်ပါမယ်။
 
-```dart 
+```dart
 
 class Vehical {
 String? name;
@@ -730,8 +737,6 @@ m.color = "Red";
 m.display();
 }
 ```
-
-
 
 Hierarchical Inheritance ဥပမာ တစ်ခု လုပ်ကြည့်ပါမယ်။ အထပ်မှာ ပြခဲ့တဲ့ Character ကိုဘဲ နောက်ထပ် Hero တစ်ယောက်ထပ်ဆောက်လိုက်ပါ။
 
@@ -789,16 +794,16 @@ void main() {
 
 ```
 
-
 > ### မှတ်သားရန်
+>
 > - ကုဒ်တွေကို ပြန်လည်အသုံးပြုရန်ဖြစ်ပါတယ်။
 > - extends keyword ကို သုံးပြီး ဖန်တီးရပါတယ်။
 > - Super class ၏ Properties နှင့် methods ကို sub class ကပြန်ယူသုံးခြင်းဖြစ်တယ်။
 > - Sub class ထဲမှာ ၄င်း၏ Properties နှင့် methods တွေ တည်ဆောက်နိုင်ပါတယ်။
 
-####  Dart မှာ ဘာလို့ Multiple Inheritance ကို ခွင့်မပြုတာလဲ?
-ဘာလို့လဲဆိုရင် ambiguity (ကုဒ် ရူတ်ထွေးမှု) ကို ဖြစ်စေလိုပါ။ ဥပမာ Apple ဆိုတဲ့ sub class က Base class Fruit နဲ့ Vegetable နှစ်ခုကနေ extend နဲ့ အမွေဆက်ခံထားတဆိုပါဆို့။ အဲ့ဒီ့ Base Classes နှစ်ခုမှာ eat ဆိုတဲ့ နာမည်တူ Method နှစ်ခုရှိနေနိုင်ပါတယ်။  အဲ့လိုဆိုရင် eat ဆိုတဲ့ method ကို Apple က သွားခေါ်တဲ့အခါ ဘယ် Fruit နှင့် Vegetable Base class ၏ eat method နှစ်ခုထဲက ဘယ် Method ကို ခေါ်မှာလဲဆိုတာ ?။ အဲ့လို ရူပ်ထွေးမှုကြောင့် Dart က Support မပေးတာဖြစ်ပါတယ်။
+#### Dart မှာ ဘာလို့ Multiple Inheritance ကို ခွင့်မပြုတာလဲ?
 
+ဘာလို့လဲဆိုရင် ambiguity (ကုဒ် ရူတ်ထွေးမှု) ကို ဖြစ်စေလိုပါ။ ဥပမာ Apple ဆိုတဲ့ sub class က Base class Fruit နဲ့ Vegetable နှစ်ခုကနေ extend နဲ့ အမွေဆက်ခံထားတဆိုပါဆို့။ အဲ့ဒီ့ Base Classes နှစ်ခုမှာ eat ဆိုတဲ့ နာမည်တူ Method နှစ်ခုရှိနေနိုင်ပါတယ်။ အဲ့လိုဆိုရင် eat ဆိုတဲ့ method ကို Apple က သွားခေါ်တဲ့အခါ ဘယ် Fruit နှင့် Vegetable Base class ၏ eat method နှစ်ခုထဲက ဘယ် Method ကို ခေါ်မှာလဲဆိုတာ ?။ အဲ့လို ရူပ်ထွေးမှုကြောင့် Dart က Support မပေးတာဖြစ်ပါတယ်။
 
 #### INHERITANCE OF CONSTRUCTOR IN DART
 
