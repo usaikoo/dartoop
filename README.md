@@ -5,7 +5,7 @@
 
 ## မာတိကာ
 
-- Introduction
+- [Introduction](#introduction)
 - [Dart OOP](#dart-oop)
 - [Class and Object](#class-and-object)
 - [Constructor In Dart](#constructor-in-dart)
@@ -21,7 +21,7 @@
 - [Factory Constructor In Dart](#factory-constructor-in-dart)
 - [Generics In Dart](#generics-in-dart)
 
-## မိတ်ဆက်
+## Introduction
 
 Dart ကို Lars Bak နှင့် Kasper Lund မှ ဒီဇိုင်းထုတ်ထားတာဖြစ်ပြီး Google က ဖန်တီးထားတဲ့ ပရိုဂရမ်ဘာသာစကားတစ်ခုဖြစ်ပါတယ်။ Dart ကို အသုံးပြုပြီး ဝဘ်နှင့် မိုဘိုင်းအက်ပ်များအပြင် ဆာဗာနှင့် ဒက်စ်တော့အက်ပ်လီကေးရှင်းများ ကိုဖန်တီး နိုင်ပါတယ်။ လက်ရှိ cross platform တွေအတွက် မိုဘိုင်းအက်ပ်တွေ ကို flutter ကိုအသုံးပြုပြီး မြန်မြန်ဆန်ဆန် ရေးသားနိုင်တာကြောင့် လက်ရှိ dart က popular ဖြစ်တဲ့ programing language တစ်ခုဖြစ်လာပါပြီ။ Flutter ကို တိုက်ရိုက်သွားမထိခင် Dart OOP ကို သိထားပြီးမှ flutter ကို သွားထိစေချင်ပါတယ်။ လုပ်ငန်းခွင် အင်တာဗျူးပြီဆိုရင် flutter ကို မမေးဘဲ dart oop knowledge ဘယ်လောက်ရှိမရှိကိုစစ်ဆေးပါတယ်။ ယခု ဒီ dart oop အခြေခံသေဘာတရားတွေကို ကျနော်သိသလောက်မြန်မာမူပြုကာ ဖော်ပြထားတာဖြစ်ပြီး လိုအပ်ချက်များရှိပါက ဝင်ရောက် ဖြည့်ဆွက်နိုင်ပါတယ်။
 
