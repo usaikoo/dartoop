@@ -1,4 +1,5 @@
-[Home](#home) | [github](https://github.com/usaikoo/dartoop.git) | [Profile](https://www.usaiko.dev/)
+###
+[Home](https://usaikoo.github.io/dartoop/) | [github](https://github.com/usaikoo/dartoop.git) | [Profile](https://www.usaiko.dev/)
 
 # Dart object oriented programming in Myanmar
 
@@ -870,3 +871,98 @@ void main() {
 
 
 ```
+
+#### Polymorphism In Dart
+
+အရင်ဆုံဲး polymorphism စကားလုံးကို အဓ္ဓပါယ်ဖွင့်ကြည့်ပါမယ်။ Poly ဆိုတာ Many (အများအပြား) morphism ဆိုတာ (ပုံစံ) ပုံစံအများအပြား ဆိုတဲ့ အဓ္ဓပါယ်သပ်ရောက်တယ်။ ဥပမာ လူသားတွေမှာဆိုရင် တချို့လူတွေက ကျောင်းသားတွေ၊ တချို့လူတွေက ဆရာတွေ ၊ တချို့လူတွေက အဂျ်နီယာတွေ စသည့်ဖြစ်ပေါ့ဗျာ။​ ဟို ဂျပု မအလ မပါဘူ ကျနော်ပြောတဲ့လူထဲမှာ :p ။ အဲ့လိုဘဲ object-oriented programming ဆိုရင် object တစ်ခုက ပုံစံမျိုးစုံ အသွင်ဖန်တီးနိုင်တဲ့ စွမ်းရည် ရှိပါတယ်။ 
+
+> #### မှတ်သားရန် :  
+- တကယ့်လက်တွေ့ ပရိုဂမ်တွေမှာ ဆိုရင် polymorphism ဆိုတာက parent calss ထဲမှာ ရှိတဲ့ feature, function သို့ implementation လုပ်ထားတဲ့ အရာတွေကို သွားပြီး ပြုပြင်လိုက်ခြင်းဖြစ်တယ်။
+
+1. Polymorphism By Method Overriding
+
+Child Class (Sub Class)  ထဲကနေ  Parent Class (Super Class) ထဲမှာ ရှိတဲ့ နာမည်တူ Method ကို Overriding သွားလုပ်ခြင်းကို ပြောတာပါ။ 
+
+ဥပမာ 
+
+```dart
+//super class တစ်ခုပါ
+
+class Animal {
+  //eat ဆိုတဲ့ method တစ်ခုရှိမယ်
+  void eat() {
+    print("Dog is eating");
+  }
+}
+
+class Dog extends Animal {
+  // sub class ထဲမှာလဲ eat ဆိုတဲ့ method ကရှိနေတယ်။ ဒါပေမဲ့ အပေါ်က parent ထဲက method တန်ဖိုးကို သွားပြီး override လုပ်လိုက်ခြင်းဖြစ်ပါတယ်။
+  @override
+  void eat() {
+    print("မအလ is eating");
+  }
+}
+
+void main() {
+  Animal animal = Animal();
+  animal.eat();
+
+  Dog dog = Dog();
+  dog.eat();
+}
+```
+
+> သတိပြုရန် 
+> @override ဆိုတဲ့ keyword မထည့်ဘဲရေးလဲ ပရိုဂမ်ကအလုပ်လုပ်နေမှာဖြစ်ပါတယ်။ သို့ပေမဲ့ @override ထည့်ရေးတာက good practice ဖြစ်တာကြောင့်ထည့်ရေးပါ။
+
+#### Static In Dart
+
+Class အတွင်းမှာရှိတဲ့ variable သို့ method တွေကို objects ဖန်တီးတဲ့အခါ ကျနော်တို့ ယူသုံးတယ်။ အဲ့လို ယူသုံးပြီးဖန်တီးတဲ့အခါ တချို့ ယူသုံးရမည့် properties တွေရဲ့ တန်ဖိုးက တူညီတဲ့ တန်ဖိုးတွေ ကို ကျနော်တို့ ဖန်တီးတဲ့ objects တွေကို ပြန်ပေးတဲ့အခါမျိုးမှာ static ကိုသုံးပြီး ပြန်ပေးလို့ရတယ်။ method တွေလဲ ထိုနည်းတူစွာဘဲ တူညီတဲ့ အရာတွေထပ်ခါခါ လုပ်ဆောင်ပးနေရပြီဆိုရင် ပုံသေ method တွေအနေဖြင့်သတ်မှတ်လိုက်လို့ရပါတယ်။ ဒီ static ကို ကောင်းကောင်းသုံးစွဲတတ်ရင်  memory usage (optimize) သတ်သာပြီး ပရိုဂရမ်က ရှယ်လှပြီး သွက်လက်နေမှာပါ။
+
+1. Dart Static Variable ကို အရင်ရှင်းကြမယ်
+
+အပေါ်မှာ ပြောသလိုဘဲ Class တွင်းက variable တွေကို object instances တွေက share သုံးနေတဲ့အခြေနေမှာ static keyword ကိုသုံးတယ်။ အဲ့ static variable က Class ကို လာခေါ်တာနဲ့ တစ်ချိန်ဘဲ initialized လုပ်တယ်။ နောက်ထပ်တခါ လာခေါ်ရင် သူက ထပ်ပြီး တန်ဖိုးကို သတ်မှတ်ပေးစရာမလိုတာကြောင့် memory မှာနေရာမယူတော့ဘူ:။ ဒါကြောင့် memory usage optimize ဖြစ်တယ်။
+
+ ```dart
+
+class Student {
+  int id;
+  String name;
+  static String schoolName = "ဒဂုံ တက္ကသိုလ်";
+  Student(this.id, this.name);
+  void display() {
+    print("Id: ${this.id}");
+    print("Name: ${this.name}");
+    print("School Name: ${Student.schoolName}");
+  }
+}
+
+void main() {
+  Student s1 = new Student(1, "ကျော်မင်းသန့်");
+  s1.display();
+  Student s2 = new Student(2, "မောင်ဘဲဥ");
+  s2.display();
+}
+ ```
+
+အပေါ်က ဥပမာကိုကြည့်ရင် ကျောင်းသားနှစ်ဦးရှိတယ်။  နာမည်ကတော့ အဖေနဲ့အမေ မွေးထဲကပေးတာမတူဘူး။ အဲ့တော့ အဲ့နှစ်ကောင်က တတ်တဲ့ကျောင်းက ဒဂုံတက္ကသိုလ် တူတယ်။ အဲ့လိုတူတဲ့ ဒေတာ variable တန်ဖိုးကို Parent Class ထဲမှာ static ပုံသေသတ်မှတ်ပေးလိုက်တယ်။ ဒါဘဲ static ဆိုတာ။
+
+
+2. Static Method In Dart
+
+```dart
+class Circle {
+  static double calculateArea(double pi, double radius ) {
+    return (pi * radius * radius);
+  }
+}
+
+void main() {
+  print(
+      "The circle area is ${Circle.calculateArea(3.14159, 2)}");
+}
+```
+Circle Area တွက်မယ်ဆိုရင် ပုံသေနည်း π × r2 ဆိုတော့ သူက ဘယ်တော့မှ မချိန်းတဲ့အရာ ဘယ်လိုဘဲတွက်တွက် ဒီ formula ဘဲဆိုတော့ ဘယ် object ကလာယူသုံးသုံးဒါဘဲ လုပ်ပေးနေမှာ အဲ့လိုခြေနေမျိုးမှာ static method ကိုသုံးရခြင်းဖြစ်တယ်။ 
+
+
+
