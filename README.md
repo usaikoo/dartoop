@@ -80,12 +80,14 @@ OOP မှာ Class ဆိုတာက blueprint လို အရာမျို
 Car ဆို တဲ့ Class တစ်ခု တနည်းအားဖြင့် သူ့ရဲ့ Blueprint ကို ကျနော်တို့ တည်ဆောက်ထားတယ်ဆိုရင် အဲ့ Car Class (Blueprint ) ကိုသုံးပြီး နောက်ထပ် Toyota | Honda| Ford ကား Object တွေတည်ဆောက်နိုင်ပါတယ်။ ဥမာ
 
 ```dart
+//ကား ဆိုတဲ့ Class တစ်ခုကို ယခုလိုတည် class ဆိုတဲ့ keyword ကိုသုံးပြီးဖန်တီးရပါမယ်။
 class Car {
+  //properties တွေသတ်မှတ်ပေးထားခြင်းဖြစ်ပါတယ်။
   String ?make;
   String? model;
   int ?year;
   double ?price;
-  // Method to display car details
+  //  ကား details တွေကိုပြဖို့ display Method တစ်ခုတည်ဆောက်ထားပါတယ်
   void displayDetails() {
     print('Make: $make, Model: $model, Year: $year, Price: \$${price}');
   }
@@ -132,13 +134,15 @@ class Car {
 
 
 void main() {
-  // Creating car objects
+  //  car instance objects တစ်ခုကို ဖန်တီးပါတယ်။
   Car car1 = Car();
+  
   car1.make = "Toyota";
   car1.model = "Camry";
   car1.year = 2022;
   car1.price = 250000.020;
-  // Displaying car details
+
+  //  car details ကို ထုတ်ကြည့်ဖို့ Car Class ထဲက displayDetails method ကို ယခုလို လှမ်းယူကြည့်နိုင်ပါတယ်။
   car1.displayDetails();
 }
 
@@ -248,14 +252,14 @@ class Phone {
   String? name;
   int? brand;
 
-  // Constructor
+  // Default Constructor 
   Phone() {
     print("This is a default constructor");
   }
 }
 
 void main() {
-  // Here samsung is object of class Phone.
+  // ဖုန်းဆိုတဲ့ Class ကိုသုံးပြီး  samsung ဆိုတဲ့ phone object တစ်ခုဖန်တီးလိုက်ခြင်းဖြစ်ပါတယ်။
   Phone samsung = Phone();
 }
 
@@ -274,13 +278,13 @@ class Car {
   int ?year;
   double ?price;
 
-    //Parameterized Constructor
+    //Parameterized Constructor တစ်ခုဖန်တီးလိုက်ပါတယ်။
     Car(this.make,  this.model, this.year,  this.price );
 }
 
 
 void main() {
-  // Creating car objects with arguments
+  // car1 object တည်ဆောက်ရင်း Car  class ထဲ ကို argument တွေထည့်သွင်းပြီးခေါ်လိုက်ပါတယ်။
   Car car1 = Car('Toyota', 'Camry', 2022, 250000.020);
 
 
