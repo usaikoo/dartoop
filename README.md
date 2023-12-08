@@ -395,11 +395,11 @@ void main() {
 
 ```
 
-> #### Note
+> #### မှတ်သားရန်
 >
 > အထပ်ပါ code ကို run ကြည့်ပါ။ Output မှာ p1 နှင့် p2 ရဲ့ code တန်ဖိုးက တူညီနေတာကို တွေ့ရမှာပါ။ သို့ပေမဲ့ const နဲ့ မဖန်တီးထားတဲ့ p3 နဲ့ p4 တို့ရဲ့ Object တွေရဲ့ တန်ဖိုးတွေကတော့ တူညီနေမှာမဟုတ်ပါဘူး။ ဘာကြောင့်လဲဆိုရင် hash code တွေရဲ့ constant object တွေက ပရိုဂမ်က compile လုပ်တဲ့အချိန်မှာ generate ထုတ်တာကြောင့်ဖြစ်ပါတယ်။ non-constant မဟုတ်တဲ့ p3 နဲ့ p4 object တွေကတော့ ပရိုဂမ် run time မှာ generate တာကြောင့် တန်ဖိုးမတူညီခြင်းဖြစ်ပါတယ်။
 
-Note: Here p1 and p2 has the same hash code. This is because p1 and p2 are constant objects. The hash code of a constant object is the same. This is because the hash code of a constant object is computed at compile time. The hash code of a non-constant object is computed at run time. This is why p3 and p4 have different hash code.
+
 
 > Compile Time: ဆိုတာက ကျနော်တို့ ရေးထားတဲ့ code တွေကို computer ကနားလည်အောင် translate လုပ်တဲ့အချိန်ကို ပြောတာပါ။ အဲ့ဒီချိန်မှာ ဖြစ်ပေါ်တဲ့ errors တွေကို compile-time errors, ဥပမာ typos သို့မဟုတ် syntax အမှားတွေရေးသားမိခြင်း။
 >
