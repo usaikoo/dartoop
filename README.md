@@ -1517,7 +1517,10 @@ ____
 [dart-tutorial.com](https://dart-tutorial.com/object-oriented-programming/generics-in-dart/) |
 [dart.dev](https://dart.dev/language)
 
-© NOT FOR SALE (ပြန်လည်ကူးယူဖော်ပြခွင့်မပြုပါ)
+
+
+#### ပြန်လည်ကူးယူဖော်ပြခွင့် သို့ ရောင်းချခွင့် မပြုပါ။ လေ့လာရန် ရည်ရွယ်သည်။
+
 
 Copyright © <span id="currentYear"></span> [usaiko.dev](usaiko.dev)
 
