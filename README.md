@@ -19,6 +19,7 @@
 - [Mixin In Dart](#mixin-in-dart)
 - [Factory Constructor In Dart](#factory-constructor-in-dart)
 - [Generics In Dart](#generics-in-dart)
+- [References](#references)
 
 ## Introduction
 
@@ -1508,9 +1509,11 @@ void main() {
 >
 > #### 🚀 OOP ရဲ့ အနှစ်သာရက ကုဒ်ကို resuable ဖြစ်ဖြစ်နဲ့ နည်းနိုင်သမျှ နည်းနဲ့ ရေးသားနိုင်ဖို့ပါဘဲ။
 >
-> #
+____
 
-REFERENCES :
+
+
+#### References :
 [dart-tutorial.com](https://dart-tutorial.com/object-oriented-programming/generics-in-dart/) |
 [dart.dev](https://dart.dev/language)
 
