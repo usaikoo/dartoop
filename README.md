@@ -135,7 +135,7 @@ class Car {
 void main() {
   //  car instance objects တစ်ခုကို ဖန်တီးပါတယ်။
   Car car1 = Car();
-  
+
   car1.make = "Toyota";
   car1.model = "Camry";
   car1.year = 2022;
@@ -251,7 +251,7 @@ class Phone {
   String? name;
   int? brand;
 
-  // Default Constructor 
+  // Default Constructor
   Phone() {
     print("This is a default constructor");
   }
@@ -401,8 +401,6 @@ void main() {
 > #### မှတ်သားရန်
 >
 > အထပ်ပါ code ကို run ကြည့်ပါ။ Output မှာ p1 နှင့် p2 ရဲ့ code တန်ဖိုးက တူညီနေတာကို တွေ့ရမှာပါ။ သို့ပေမဲ့ const နဲ့ မဖန်တီးထားတဲ့ p3 နဲ့ p4 တို့ရဲ့ Object တွေရဲ့ တန်ဖိုးတွေကတော့ တူညီနေမှာမဟုတ်ပါဘူး။ ဘာကြောင့်လဲဆိုရင် hash code တွေရဲ့ constant object တွေက ပရိုဂမ်က compile လုပ်တဲ့အချိန်မှာ generate ထုတ်တာကြောင့်ဖြစ်ပါတယ်။ non-constant မဟုတ်တဲ့ p3 နဲ့ p4 object တွေကတော့ ပရိုဂမ် run time မှာ generate တာကြောင့် တန်ဖိုးမတူညီခြင်းဖြစ်ပါတယ်။
-
-
 
 > Compile Time: ဆိုတာက ကျနော်တို့ ရေးထားတဲ့ code တွေကို computer ကနားလည်အောင် translate လုပ်တဲ့အချိန်ကို ပြောတာပါ။ အဲ့ဒီချိန်မှာ ဖြစ်ပေါ်တဲ့ errors တွေကို compile-time errors, ဥပမာ typos သို့မဟုတ် syntax အမှားတွေရေးသားမိခြင်း။
 >
@@ -877,16 +875,17 @@ void main() {
 
 #### Polymorphism In Dart
 
-အရင်ဆုံဲး polymorphism စကားလုံးကို အဓပ္ပါယ်ဖွင့်ကြည့်ပါမယ်။ Poly ဆိုတာ Many (အများအပြား) morphism ဆိုတာ (ပုံစံ) ပုံစံအများအပြား ဆိုတဲ့ အဓပ္ပါယ်သပ်ရောက်တယ်။ ဥပမာ လူသားတွေမှာဆိုရင် တချို့လူတွေက ကျောင်းသားတွေ၊ တချို့လူတွေက ဆရာတွေ ၊ တချို့လူတွေက အဂျ်နီယာတွေ စသည့်ဖြစ်ပေါ့ဗျာ။​ ဟို ဂျပု မအလ မပါဘူ ကျနော်ပြောတဲ့လူထဲမှာ :p ။ အဲ့လိုဘဲ object-oriented programming ဆိုရင် object တစ်ခုက ပုံစံမျိုးစုံ အသွင်ဖန်တီးနိုင်တဲ့ စွမ်းရည် ရှိပါတယ်။ 
+အရင်ဆုံဲး polymorphism စကားလုံးကို အဓပ္ပါယ်ဖွင့်ကြည့်ပါမယ်။ Poly ဆိုတာ Many (အများအပြား) morphism ဆိုတာ (ပုံစံ) ပုံစံအများအပြား ဆိုတဲ့ အဓပ္ပါယ်သပ်ရောက်တယ်။ ဥပမာ လူသားတွေမှာဆိုရင် တချို့လူတွေက ကျောင်းသားတွေ၊ တချို့လူတွေက ဆရာတွေ ၊ တချို့လူတွေက အဂျ်နီယာတွေ စသည့်ဖြစ်ပေါ့ဗျာ။​ ဟို ဂျပု မအလ မပါဘူ ကျနော်ပြောတဲ့လူထဲမှာ :p ။ အဲ့လိုဘဲ object-oriented programming ဆိုရင် object တစ်ခုက ပုံစံမျိုးစုံ အသွင်ဖန်တီးနိုင်တဲ့ စွမ်းရည် ရှိပါတယ်။
 
-> #### မှတ်သားရန် :  
+> #### မှတ်သားရန် :
+
 - တကယ့်လက်တွေ့ ပရိုဂမ်တွေမှာ ဆိုရင် polymorphism ဆိုတာက parent calss ထဲမှာ ရှိတဲ့ feature, function သို့ implementation လုပ်ထားတဲ့ အရာတွေကို သွားပြီး ပြုပြင်လိုက်ခြင်းဖြစ်တယ်။
 
 1. Polymorphism By Method Overriding
 
-Child Class (Sub Class)  ထဲကနေ  Parent Class (Super Class) ထဲမှာ ရှိတဲ့ နာမည်တူ Method ကို Overriding သွားလုပ်ခြင်းကို ပြောတာပါ။ 
+Child Class (Sub Class) ထဲကနေ Parent Class (Super Class) ထဲမှာ ရှိတဲ့ နာမည်တူ Method ကို Overriding သွားလုပ်ခြင်းကို ပြောတာပါ။
 
-ဥပမာ 
+ဥပမာ
 
 ```dart
 //super class တစ်ခုပါ
@@ -915,41 +914,40 @@ void main() {
 }
 ```
 
-> သတိပြုရန် 
+> သတိပြုရန်
 > @override ဆိုတဲ့ keyword မထည့်ဘဲရေးလဲ ပရိုဂမ်ကအလုပ်လုပ်နေမှာဖြစ်ပါတယ်။ သို့ပေမဲ့ @override ထည့်ရေးတာက good practice ဖြစ်တာကြောင့်ထည့်ရေးပါ။
 
 #### Static In Dart
 
-Class အတွင်းမှာရှိတဲ့ variable သို့ method တွေကို objects ဖန်တီးတဲ့အခါ ကျနော်တို့ ယူသုံးတယ်။ အဲ့လို ယူသုံးပြီးဖန်တီးတဲ့အခါ တချို့ ယူသုံးရမည့် properties တွေရဲ့ တန်ဖိုးက တူညီတဲ့ တန်ဖိုးတွေ ကို ကျနော်တို့ ဖန်တီးတဲ့ objects တွေကို ပြန်ပေးတဲ့အခါမျိုးမှာ static ကိုသုံးပြီး ပြန်ပေးလို့ရတယ်။ method တွေလဲ ထိုနည်းတူစွာဘဲ တူညီတဲ့ အရာတွေထပ်ခါခါ လုပ်ဆောင်ပးနေရပြီဆိုရင် ပုံသေ method တွေအနေဖြင့်သတ်မှတ်လိုက်လို့ရပါတယ်။ ဒီ static ကို ကောင်းကောင်းသုံးစွဲတတ်ရင်  memory usage (optimize) သတ်သာပြီး ပရိုဂရမ်က ရှယ်လှပြီး သွက်လက်နေမှာပါ။
+Class အတွင်းမှာရှိတဲ့ variable သို့ method တွေကို objects ဖန်တီးတဲ့အခါ ကျနော်တို့ ယူသုံးတယ်။ အဲ့လို ယူသုံးပြီးဖန်တီးတဲ့အခါ တချို့ ယူသုံးရမည့် properties တွေရဲ့ တန်ဖိုးက တူညီတဲ့ တန်ဖိုးတွေ ကို ကျနော်တို့ ဖန်တီးတဲ့ objects တွေကို ပြန်ပေးတဲ့အခါမျိုးမှာ static ကိုသုံးပြီး ပြန်ပေးလို့ရတယ်။ method တွေလဲ ထိုနည်းတူစွာဘဲ တူညီတဲ့ အရာတွေထပ်ခါခါ လုပ်ဆောင်ပးနေရပြီဆိုရင် ပုံသေ method တွေအနေဖြင့်သတ်မှတ်လိုက်လို့ရပါတယ်။ ဒီ static ကို ကောင်းကောင်းသုံးစွဲတတ်ရင် memory usage (optimize) သတ်သာပြီး ပရိုဂရမ်က ရှယ်လှပြီး သွက်လက်နေမှာပါ။
 
 1. Dart Static Variable ကို အရင်ရှင်းကြမယ်
 
 အပေါ်မှာ ပြောသလိုဘဲ Class တွင်းက variable တွေကို object instances တွေက share သုံးနေတဲ့အခြေနေမှာ static keyword ကိုသုံးတယ်။ အဲ့ static variable က Class ကို လာခေါ်တာနဲ့ တစ်ချိန်ဘဲ initialized လုပ်တယ်။ နောက်ထပ်တခါ လာခေါ်ရင် သူက ထပ်ပြီး တန်ဖိုးကို သတ်မှတ်ပေးစရာမလိုတာကြောင့် memory မှာနေရာမယူတော့ဘူ:။ ဒါကြောင့် memory usage optimize ဖြစ်တယ်။
 
- ```dart
+```dart
 
 class Student {
-  int id;
-  String name;
-  static String schoolName = "ဒဂုံ တက္ကသိုလ်";
-  Student(this.id, this.name);
-  void display() {
-    print("Id: ${this.id}");
-    print("Name: ${this.name}");
-    print("School Name: ${Student.schoolName}");
-  }
+ int id;
+ String name;
+ static String schoolName = "ဒဂုံ တက္ကသိုလ်";
+ Student(this.id, this.name);
+ void display() {
+   print("Id: ${this.id}");
+   print("Name: ${this.name}");
+   print("School Name: ${Student.schoolName}");
+ }
 }
 
 void main() {
-  Student s1 = new Student(1, "ကျော်မင်းသန့်");
-  s1.display();
-  Student s2 = new Student(2, "မောင်ဘဲဥ");
-  s2.display();
+ Student s1 = new Student(1, "ကျော်မင်းသန့်");
+ s1.display();
+ Student s2 = new Student(2, "မောင်ဘဲဥ");
+ s2.display();
 }
- ```
+```
 
-အပေါ်က ဥပမာကိုကြည့်ရင် ကျောင်းသားနှစ်ဦးရှိတယ်။  နာမည်ကတော့ အဖေနဲ့အမေ မွေးထဲကပေးတာမတူဘူး။ အဲ့တော့ အဲ့နှစ်ကောင်က တတ်တဲ့ကျောင်းက ဒဂုံတက္ကသိုလ် တူတယ်။ အဲ့လိုတူတဲ့ ဒေတာ variable တန်ဖိုးကို Parent Class ထဲမှာ static ပုံသေသတ်မှတ်ပေးလိုက်တယ်။ ဒါဘဲ static ဆိုတာ။
-
+အပေါ်က ဥပမာကိုကြည့်ရင် ကျောင်းသားနှစ်ဦးရှိတယ်။ နာမည်ကတော့ အဖေနဲ့အမေ မွေးထဲကပေးတာမတူဘူး။ အဲ့တော့ အဲ့နှစ်ကောင်က တတ်တဲ့ကျောင်းက ဒဂုံတက္ကသိုလ် တူတယ်။ အဲ့လိုတူတဲ့ ဒေတာ variable တန်ဖိုးကို Parent Class ထဲမှာ static ပုံသေသတ်မှတ်ပေးလိုက်တယ်။ ဒါဘဲ static ဆိုတာ။
 
 2. Static Method In Dart
 
@@ -965,15 +963,279 @@ void main() {
       "The circle area is ${Circle.calculateArea(3.14159, 2)}");
 }
 ```
-Circle Area တွက်မယ်ဆိုရင် ပုံသေနည်း π × r2 ဆိုတော့ သူက ဘယ်တော့မှ မချိန်းတဲ့အရာ ဘယ်လိုဘဲတွက်တွက် ဒီ formula ဘဲဆိုတော့ ဘယ် object ကလာယူသုံးသုံးဒါဘဲ လုပ်ပေးနေမှာ အဲ့လိုခြေနေမျိုးမှာ static method ကိုသုံးရခြင်းဖြစ်တယ်။ 
 
-> မှတ်သားရန် 
-> - static method ကို ခေါ်ယူသုံးဖို့ instance object ဆောက်စရာမလိုဘူး။ 
+Circle Area တွက်မယ်ဆိုရင် ပုံသေနည်း π × r2 ဆိုတော့ သူက ဘယ်တော့မှ မချိန်းတဲ့အရာ ဘယ်လိုဘဲတွက်တွက် ဒီ formula ဘဲဆိုတော့ ဘယ် object ကလာယူသုံးသုံးဒါဘဲ လုပ်ပေးနေမှာ အဲ့လိုခြေနေမျိုးမှာ static method ကိုသုံးရခြင်းဖြစ်တယ်။
+
+> မှတ်သားရန်
+>
+> - static method ကို ခေါ်ယူသုံးဖို့ instance object ဆောက်စရာမလိုဘူး။
 
 > Key Points To Remember
+>
 > - Static members တွေက Class.staticName အဲ့လို ခေါ်ယူသုံးလို့ရ။
 > - static method တည်ဆောက်လိုက်တာနဲ့ Class က အဲ့ method ကို ခေါ်ယူသုံးစွဲခွင့်ပြုထားပြီးသားဖြစ်တယ်။
 
+Enum In Dart
+
+Dart မှာ keyword enum ကို သုံးပြီး ကိန်းသေတန်ဖိုးများ ကို ကိုယ်စားပြုဖန်တီးနိုင်ပါတယ်။ <br>
+
+ရေးနည်းပုံစံ
+
+```dart
+enum enumName {
+  constantName1,
+  constantName2,
+  constantName3,
+  ...
+  constantNameN
+}
+```
+
+ဥပမာ
+
+```dart
+
+//  ကိန်းသေ အရောင်သုံးမျိုးတန်ဖိုးပါဝင်တဲ့ enum တစ်ခုကို ဖန်တီးထားလိုက်ပါမယ်
+enum Color {
+  red,
+  green,
+  blue,
+}
+
+void main() {
+  // enum Class ကို သုံးပြီး instance တစ်ခုဖန်တီးလိုက်ပါတယ်
+  Color myColor = Color.blue;
+
+  // ရလာတဲ့ color တန်ဖိုးတွေကို စစ်ပြီး print ပြန်ထုတ်ပေးလိုက်ပါတယ်။
+  if (myColor == Color.red) {
+    print("It's a red color!");
+  } else if (myColor == Color.green) {
+    print("It's a green color!");
+  } else if (myColor == Color.blue) {
+    print("It's a blue color!");
+  } else {
+    print("It's some other color.");
+  }
+}
+
+```
+
+Real World shopping cart Project တစ်ခု တည်ဆောက်ကြည့်ပါမယ်။
+
+```dart
+// enum product categories တစ်ခု တည်ဆောက်လိုက်မယ်
+enum ProductCategory {
+  electronics,
+  clothing,
+
+}
+
+// product calss တစ်ခု တည်ဆောက်လိုက်ပါမယ်။
+class Product {
+  //properties တွေသတ်မှတ်မယ်
+  String name;
+  double price;
+  // enum ProductCategory class ကိုဒီမှာ လာခေါ်သုံးထားပါတယ်
+  ProductCategory category;
+
+  Product(this.name, this.price, this.category);
+}
+
+// shopping cart တစ်ခု ဖန်တီးလိုက်မယ်
+class ShoppingCart {
+  //product class items list property တစ်ခု တည်ဆောက်လိုက်ပါမယ်။ shopping cart ဆိုတာ product တစ်ခုထက်မက ထည့်လို့ရတယ်မဟုတ်လား။
+  List<Product> items = [];
+
+  // shopping cart ထဲကို ထည့်ဖို့ method တစ်ခု ဖန်တီးလိုက်မယ်။
+  void addProduct(Product product) {
+    items.add(product);
+    print('${product.name} added to the shopping cart.');
+  }
+
+  // shopping cart ထဲမှာ ရှိတဲ့ item တွေရဲ့ total price ကို တွက်ဖို့ နောက်တဲ့ method တစ်ခုဖန်တီးထားပါမယ်။
+  // Method to calculate the total price of items in the shopping cart
+  double calculateTotal() {
+    double total = 0;
+    for (var item in items) {
+      total += item.price;
+    }
+    return total;
+  }
+
+  // shopping cart ဒေတာတွေကို ပြဖို့ method တစ်ခုထပ်ဆောက်ထားပါမယ်
+  void displayCart() {
+    print('Shopping Cart Contents:');
+    for (var item in items) {
+      print('- ${item.name} \t \$${item.price.toStringAsFixed(2)}');
+    }
+    print('Total: \$${calculateTotal().toStringAsFixed(2)}');
+  }
+}
+
+void main() {
+  //  products class ကို ခေါ်ပြီး laptop နဲ့ shirt objects တွေတည်ဆောက်လိုက်ပါမယ်။
+  var laptop = Product('Laptop', 899.99, ProductCategory.electronics);
+  var shirt = Product('T-Shirt', 19.99, ProductCategory.clothing);
+
+  // shopping cart  class ကိုသုံးပြီး cart object တစ်ခု ဆောက်ပါမယ်
+  var cart = ShoppingCart();
+
+  // shopping cart အပေါ်ကဆောက်ထားတဲ့ laptop နဲ့ shirt object တွေကို cart object ၏ addProduct method ကို သုံးပြီး shopping cart ထဲထည့်လိုက်ခြင်းဖြစ်ပါတယ်။
+  cart.addProduct(laptop);
+  cart.addProduct(shirt);
+
+  // shopping cart တွေရဲ့တန်ဖိုးကို ဒီမှာပြန်ထုတ်ကြည့်ပါမယ်
+  cart.displayCart();
+}
 
 
+```
 
+> Advantages Of Enum In Dart
+>
+> - အမည်ပေးထားသောကိန်းသေအစုတစ်ခု ဖန်တီးနိုင်ခြင်း
+> - ကုဒ် ထိန်းသိမ်းရလွယ်ကူစေပါတယ်
+> - ကုဒ် ကို ပြန်လည်အသုံးပြုနိုင်ခြင်း (code reusable)
+>
+> #
+
+### Abstract Class
+
+Abstract classes တွေက ပုံမှန် class တွေလိုမျိုး initialized လုပ်လို့မရပါဘူး။ initialized လုပ်လို့မရဘူးဆိုတာက abstract class ကိုသုံးပြီး object instance တည်ဆောက်လို့မရပါဘူး။ ၄င်း၏ရည်ရွယ်ချက်က သူ့ကို တခြား class တွက လာပြီး extends လာလုပ်ပြီး inherited လုပ်ယူနိုင်ဖို့ရည်ရွယ်ထားခြင်းဖြစ်ပါတယ်။ abstract class ကို abstract keyword သုံးပြီးဖန်တီးရပါတယ်။
+
+ဥပမာ
+
+```dart
+// Shape Abstract class တစ်ခု တည်ဆောက်ပါမယ်။
+abstract class Shape {
+  // Abstract method တစ်ခုပါ တည်ဆောက်လိုက်ပါမယ်။ body ပါခွင့်မရှိပါ။
+  double calculateArea();
+}
+
+// Circle ဟာ ဒီနေရာမှာ Concrete subclass ဖြစ်သွားပါတယ်။ ဘာလို့လဲဆိုရင် Shape ကို extends keyword နဲ့ အမွေဆက်ခံလိုက်လို့ပါ။
+class Circle extends Shape {
+  double radius;
+
+  Circle(this.radius);
+
+  // polimorphism method override ကိုသုံးပြီး abstract method တစ်ခုတည်ဆောက်ထားပါတယ်။
+  @override
+  double calculateArea() {
+    return 3.14159 * radius * radius;
+  }
+}
+
+void main() {
+  // Circle concrete subclass ကို သုံးပြီး circle ဆိုတဲ့ instance တစ်ခု တည်ဆောက်လိုက်ပါတယ်။
+  var circle = Circle(5.0);
+
+  //concrete abstract method ကို pirnt ထုတ်ကြည့်ပါမယ်
+  print('Area of the circle: ${circle.calculateArea()}');
+}
+
+
+```
+
+![Alt text](image.png)
+
+img ref [link](https://imgs.search.brave.com/3YibPhxCpOsVbUTezwyCoKKKf1ASWLkx8DzVVtkZ3FQ/rs:fit:860:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZWVrc2Zvcmdl/ZWtzLm9yZy93cC1j/b250ZW50L3VwbG9h/ZHMvY29uY3JldGUt/Mi5wbmc)
+
+> မှတ်သားရန် 
+> - (area method) တူညီတဲ့ method တွေ အပြုအမူတွေ ရှိနေတဲ့ classes (ပုံ) အရ (rectangle နှင့် cicle)လို classes တွေ အတွက် တနေရာထဲမှာ လာရောက်စုဝေးကြောငြာသတ်မှတ်ဖို့ abstract class တွေကို အသုံးပြုနိုင်ပါတယ်။
+> - abstract class ရဲ့ object တွေဖန်တီးလို့မရ
+> - ၄င်းမှာ abstract နှင့် non-abstract methods တွေဖန်တီးနိုင်ပါတယ်
+> - ၄င်းကို တခြား classes တွေရဲ့ တူညီတဲ့ method တွေထည့်သွင်းကြောငြာထားဖို့သာဖြစ်တယ်
+> no body (no return type) မရှိသင့်ပါ။ (ထည့်ရေးလဲ error မတတ်ပါ သို့ပေမဲ့ abstract class တွေ၏ စံနူန်းအရ body မရှိသင့်ဘဲ subcalss တွေကဘဲ abstruct method တွေကို override လုပ်ရန်ဖြစ်ပါတယ်)
+
+
+### Interface In Dart
+
+Interface(အင်တာဖေ့စ်တစ်ခု) မှာ class တစ်ခုလိုက်နာရမည့် syntax တစ်ခုကို သတ်မှတ်ခြင်းဖြစ်ပါတယ်။ class တစ်ခု၏ လုပ်ဆောင်နိုင်တဲ့ အပြုအမှုတွေကို သတ်မှတ်ပေးလိုက်ခြင်းဖြစ်ပါတယ်။  Interface တစ်ခုကို ဖန်တီးတော့မယ်ဆိုလျှင် sub class တွေ၏ methods and properties ကို အတိအကျ ထည့်သွင်း ဖန်တီးထားမှရပါမယ်။
+Dart မှာ Interface က abstract ရဲ့လုပ်ဆောင်နိုင်စွမ်းကို နောက်တစ်ဆင့်မြှင့်တင်ပေးလိုက်တဲ့သဘောပါဘဲ။
+
+ဥပမာ 
+
+```dart 
+
+// abstract class as interface
+abstract class Vehicle {
+  void start();
+  void stop();
+}
+// implements keyword ကို သုံးပြီး car interface တစ်ခုတည်ဆောက်သွားပါမယ်
+class Car implements Vehicle {
+  @override
+  void start() {
+    print('Car started');
+  }
+
+  @override
+  void stop() {
+    print('Car stopped');
+  }
+}
+
+void main() {
+  var car = Car();
+  car.start();
+  car.stop();
+}
+```
+
+#### Multiple Inheritance In Dart
+
+အပေါ်မှာ ပြောခဲ့တာ Dart မှာ Multiple Inhertiance မရှိဘူးဆို။ ဟုတ်ပါတယ် Classes အချင်းချင်း Multiple Inhertiance လုပ်ခွင့်မရှိပါ။ သို့ပေမဲ့ Multiple Inheritance လုပ်ဖို့လိုအပ်လာရင် Interface ကို သုံးပြီး Multiple Inheritance လုပ်နိုင်ပါတယ်။ 
+
+ဥပမာ 
+
+```dart 
+// interface abstract class 
+abstract class CalculateTotal {
+  int total();
+}
+// interface abstract class 
+abstract class CalculateAverage {
+  double average();
+}
+// implements multiple interfaces ကိုဒီမှာ သုံးသွားပါတယ်
+class Student implements CalculateTotal, CalculateAverage {
+// properties
+  int marks1, marks2, marks3;
+// constructor
+  Student(this.marks1, this.marks2, this.marks3);
+// implementation of average()
+  @override
+  double average() {
+    return total() / 3;
+  }
+// implementation of total()
+  @override
+  int total() {
+    return marks1 + marks2 + marks3;
+  }
+}
+
+void main() {
+  Student student = Student(90, 80, 70);
+  print('Total marks: ${student.total()}');
+  print('Average marks: ${student.average()}');
+}
+
+```
+### Extends  နှင့် Implements ကွာခြားချက်
+
+| Extends     | VS | Implements |
+|----------|-----|------------|
+| sub class သည် super class ထံမှ အမွေဆက်ခံဖို့သုံးတယ် |   | အခြား class တစ်ခုတွင် interface တစ်ခုအဖြစ် class တစ်ခုကို အမွေဆက်ခံရန် အသုံးပြုသည်။
+  |sub class ကနေ  super class ထံမှ complete method တစ်ခုလုံးကို ယူသုံးနိုင်တယ်   |   |  abstract method ကိုဘဲ sub-class ထံလက်ဆင့်ကမ်းနိုင်တယ်.
+ Muliple inheritance မရ	  |   |  Multiple inheritance ရတယ်
+ method override လုပ်ချင်လဲရ မလုပ်ချင်လဲရ  |   |  method override လုပ်ကို လုပ်မှရ
+ subclass ရဲ့ constructor က subcalss ရဲ့ construcotr မခေါ်ခင် အရင် ခေါ်ရမယ် |   |  subclass မှာ constructor မလိုဘူး
+ subclass ကို  suber keyword သုံးပြီ: subclass မှာသုံးလို့ရ |   | super keyword သုံးမရ
+subclass မှာရှိတဲ့ properties တန်ဖိုးကို လိုအပ်ရင် လိုအပ်သလို subclass ကနေ ချိန်းခွင့်ရှိ |   | superclass interface ၏ fields တွေကို override လုပ်ကို လုပ်မှရမယ်
+
+> မှတ်သားရန် အချက်များ
+> - 
+
+
+	
