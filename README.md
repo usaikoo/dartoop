@@ -264,7 +264,7 @@ void main() {
 
 #### 2. Parameterized Constructor
 
-Parameterized constructor ဆိုတာက class တစ်ခုတည်ဆောက်တဲ့အခါ အဲ့ Class instance variable များကို စတင်သတ်မှတ်ဖို့အတွက် အသုံးပြုတာဖြစ်ပါတယ်။တနည်း အားဖြင့် Parameterized constructor ဆိုတာ parameter များ၏ တန်ဖိုး ကိုယူသော constructor ဖြစ်ပါတယ်။ အထပ်မှာ Car Object တစ်ခု ဖန်တီးပြီး ထည့်ပေးလိုက် တဲ့ Arguments (make,model,year,price) တွေရဲ့ တန်ဖိုးကို အလိုလျှောက်သတ်မှတ်ဖို့ပါ။ ဥပမာ ဒီ ကုဒ်ကို ပြန်ကြည့်ပါ။
+Parameterized constructor ဆိုတာက class တစ်ခုတည်ဆောက်တဲ့အခါ အဲ့ Class instance variable များကို စတင်သတ်မှတ်ဖို့အတွက် အသုံးပြုတာဖြစ်ပါတယ်။တနည်း အားဖြင့် Parameterized constructor ဆိုတာ object instance ကနေထည့်ပေးလိုက်တဲ့ parameter များ၏ တန်ဖိုး ကိုယူပြီး Class ကိုလာခေါ်တာနဲ့ အလိုလျောက် properties တွေဖိုးတွေကို သတ်မှတ်ပေးလိုက်တာကို Parameterized Constructor လို့ခေါ်ပါတယ်။ အထပ်မှာ Car Object တစ်ခု ဖန်တီးပြီး ထည့်ပေးလိုက် တဲ့ Arguments (make,model,year,price) တွေရဲ့ တန်ဖိုးကို အလိုလျှောက်သတ်မှတ်ဖို့ပါ။ ဥပမာ ဒီ ကုဒ်ကို ပြန်ကြည့်ပါ။
 
 ```dart
 
