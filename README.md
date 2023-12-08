@@ -1516,4 +1516,8 @@ REFERENCES :
 
 © NOT FOR SALE (ပြန်လည်ကူးယူဖော်ပြခွင့်မပြုပါ)
 
-Copyright © 2023 - {{ site.time | date: "%Y" }} [usaiko.dev](usaiko.dev)
+Copyright © <span id="currentYear"></span> [usaiko.dev](usaiko.dev)
+
+<script>
+document.getElementById('currentYear').innerHTML = new Date().getFullYear();
+</script>
